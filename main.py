@@ -24,7 +24,9 @@ print(df.describe())
 # decision tree
 # Hyperprameter
 # values count
-
+# data.describe()
+# decision tree classifer
+# Hyper Parameter
 # Clean the Data
 
 
