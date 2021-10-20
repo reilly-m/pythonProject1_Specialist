@@ -1,17 +1,30 @@
-# This is a sample Python script.
+import pandas as pd
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# A function to list the files and directories
+def list_full_paths(directory):
+    return [os.path.join(directory, file) for file in os.listdir(directory)]
+
+# Import the csv files and load into a Dataframe
+filepaths = list_full_paths('./UK Used Cars')
+df = pd.concat(map(pd.read_csv, filepaths))
+
+# Print the first 10 lines
+print(df.head())
+
+# Descibe the Dataset
+print(df.info)
+print(df.describe())
+
+# Supervised Learning / Regression Model
+# Checking for multicolinerality
+# Scalar
+# Score function
+# knn
+# decision tree
+# Hyperprameter
+# values count
+
+# Clean the Data
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-# Added additional comment
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-    print("ucd")
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
