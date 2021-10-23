@@ -8,6 +8,9 @@ from numpy.random import randn
 pd.set_option('display.max_rows', 500)
 pd.set_option('display.max_columns', 500)
 pd.set_option('display.width', 1500)
+from sklearn.linear_model import LinearRegression
+import statsmodels.formula.api as smf
+#%matplotlib inline
 
 
 # Import Car Data - 9 files
@@ -66,3 +69,44 @@ plt.legend
 plt.show()
 
 # Basic Model - Linear Regression
+x = df_sample.drop(['price'], axis=1)
+y  = df_sample['price']
+
+# visualize the relationship between the features and the response using scatterplots
+for col in x.columns:
+    if (col != ['price']):
+        plt.scatter(x[col],y)
+        plt.xlabel(col)
+        plt.ylabel('price')
+        plt.show()
+
+# create X and y
+feature_cols = ['mileage']
+X = df_sample[feature_cols]
+y = df_sample.price
+
+# follow the usual sklearn pattern: import, instantiate, fit
+lm = LinearRegression()
+lm.fit(X, y)
+
+# print intercept and coefficients
+print("Intercept is",lm.intercept_)
+print("milage coefficient is",lm.coef_)
+
+#  Let's create a DataFrame
+X_new = pd.DataFrame({'milage': [50000]})
+X_new.head()
+# use the model to make predictions on a new value
+print(lm.predict(X_new))
+
+# create X and y
+feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize']
+X = df_sample[feature_cols]
+y = df_sample.price
+
+mul_reg_model = LinearRegression()
+mul_reg_model.fit(X, y)
+
+# print intercept and coefficients
+print("Intercept is {:.5f}".format(mul_reg_model.intercept_))
+print("year coefficient is {:.8f}.\n milage coefficient is {:.8f}.\n tax coefficient is {:.8f}.\n mpg coefficient is {:.8f}.\n engineSize coefficient is {:.8f}.\n".format(mul_reg_model.coef_[0],mul_reg_model.coef_[1],mul_reg_model.coef_[2],mul_reg_model.coef_[3],mul_reg_model.coef_[4]))
