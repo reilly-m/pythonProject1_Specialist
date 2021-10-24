@@ -102,7 +102,7 @@ X_new.head()
 print(lm.predict(X_new))
 
 # create X and y
-feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize']
+feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize','fuelType']
 X = df_sample[feature_cols]
 y = df_sample.price
 
@@ -112,21 +112,3 @@ mul_reg_model.fit(X, y)
 # print intercept and coefficients
 print("Intercept is {:.5f}".format(mul_reg_model.intercept_))
 print("year coefficient is {:.8f}.\n milage coefficient is {:.8f}.\n tax coefficient is {:.8f}.\n mpg coefficient is {:.8f}.\n engineSize coefficient is {:.8f}.\n".format(mul_reg_model.coef_[0],mul_reg_model.coef_[1],mul_reg_model.coef_[2],mul_reg_model.coef_[3],mul_reg_model.coef_[4]))
-
-print(df.describe().T)
-with open('file.txt', 'w') as f:
-    print(df.describe().T, file=f)
-
-# let's see how data is distributed for every column
-plt.figure(figsize=(20,25), facecolor='white')
-plotnumber = 4
-
-for column in df:
-    if plotnumber<=6:     # as there are 9 columns in the data
-        ax = plt.subplot(3,3,plotnumber)
-        sns.distplot(df[column])
-        plt.xlabel(column,fontsize=20)
-        #plt.ylabel('Salary',fontsize=20)
-    plotnumber+=1
-plt.show()
-
