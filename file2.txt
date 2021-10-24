@@ -1,0 +1,6 @@
+           model  year  price transmission  mileage fuelType    tax   mpg  engineSize make
+51029    C Class  2019  24299    Semi-Auto    12321   Diesel  145.0  58.9         2.0  mer
+83084      T-Roc  2019  24549    Automatic     6737   Diesel  145.0  50.4         2.0   vw
+16398         X3  2016  17495    Semi-Auto    31100   Diesel  145.0  54.3         2.0  bmw
+10580   3 Series  2017  16500       Manual    16570   Diesel  125.0  58.9         2.0  bmw
+53358    C Class  2016  15990    Automatic    44000   Diesel   30.0  64.2         1.6  mer
