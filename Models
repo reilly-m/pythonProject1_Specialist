@@ -240,6 +240,7 @@ def evaluate(model,x_train, y_train):
     print('Accuracy = {:0.2f}%.'.format(accuracy))
     return accuracy
 
+
 base_rfr = RandomForestRegressor(n_estimators = 10, random_state = 42)
 base_rfr.fit(x_train,y_train)
 base_accuracy = evaluate(base_rfr,x_train,y_train)
