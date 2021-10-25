@@ -95,6 +95,7 @@ y_pred = mul_reg_model.predict(x_test)
 #print(mul_reg_model.score(x_train, y_train))
 #print(mul_reg_model.score(x_test,y_test))
 
+
 # Scalar
 scalar = StandardScaler()
 x_scaled = scalar.fit_transform(x1)

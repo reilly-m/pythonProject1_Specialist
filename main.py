@@ -91,6 +91,7 @@ y = df_sample.price
 lm = LinearRegression()
 lm.fit(X, y)
 
+
 # print intercept and coefficients
 print("Intercept is",lm.intercept_)
 print("milage coefficient is",lm.coef_)
