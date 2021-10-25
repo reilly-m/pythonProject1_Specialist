@@ -68,6 +68,8 @@ df_sample = df.sample(n=20000,random_state=44)
 # Multiple Linear Regression
 # create X and y
 
+
+
 feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize','fuelType','transmission']
 x = df[feature_cols]
 y = df.price

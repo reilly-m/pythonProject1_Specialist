@@ -22,6 +22,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.decomposition import PCA
 from sklearn.ensemble import BaggingClassifier
 from sklearn.metrics import mean_squared_error as mse
+from sklearn.ensemble import ExtraTreesRegressor
 
 
 # Import Car Data and Clean
