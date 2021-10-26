@@ -52,19 +52,19 @@ df['model'] = df['model'].str.strip()
 
 print(df.head())
 
-# Multiple Linear Regression
+### Multiple Linear Regression - the whole dataset
 # create X and y
 
 feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize',]
 x = df[feature_cols]
 y = df.price
 
-#mul_reg_model = LinearRegression()
-#mul_reg_model.fit(x, y)
+mul_reg_model = LinearRegression()
+mul_reg_model.fit(x, y)
 
 # print intercept and coefficients
-#print("Intercept is {:.5f}".format(mul_reg_model.intercept_))
-#print("year coefficient is {:.8f}.\n milage coefficient is {:.8f}.\n tax coefficient is {:.8f}.\n mpg coefficient is {:.8f}.\n engineSize coefficient is {:.8f}.\n".format(mul_reg_model.coef_[0],mul_reg_model.coef_[1],mul_reg_model.coef_[2],mul_reg_model.coef_[3],mul_reg_model.coef_[4]))
+print("Intercept is {:.5f}".format(mul_reg_model.intercept_))
+#rint("year coefficient is {:.8f}.\n milage coefficient is {:.8f}.\n tax coefficient is {:.8f}.\n mpg coefficient is {:.8f}.\n engineSize coefficient is {:.8f}.\n".format(mul_reg_model.coef_[0],mul_reg_model.coef_[1],mul_reg_model.coef_[2],mul_reg_model.coef_[3],mul_reg_model.coef_[4]))
 
 ############Audi
 
@@ -73,7 +73,7 @@ cor = df.corr()["price"]
 print(cor)
 
 
-#### Linear Regression 5 numerical predictors
+#### Linear Regression 5 numerical predictors - Audi datas
 df_audi = df[df["make"]=='audi']
 feature_cols = ['year', 'mileage', 'tax', 'mpg','engineSize']
 x = df_audi[feature_cols]
@@ -221,7 +221,7 @@ print(random_grid)
 rfr = RandomForestRegressor()
 # Random search of parameters, using 3 fold cross validation,
 # search across 100 different combinations, and use all available cores
-rfr_random = RandomizedSearchCV(estimator = rfr, param_distributions = random_grid, n_iter = 3, cv = 3, verbose=2, random_state=42, n_jobs = -1)
+rfr_random = RandomizedSearchCV(estimator = rfr, param_distributions = random_grid, n_iter = 100, cv = 3, verbose=2, random_state=42, n_jobs = -1)
 # Fit the random search model
 rfr_random.fit(x_train, y_train)
 # Best Paramenters

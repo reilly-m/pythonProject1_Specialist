@@ -60,6 +60,7 @@ df['model'] = df['model'].str.strip()
 df_audi = df[df["make"]=='audi']
 df_audi_top = df[df.model.isin(['A1','A3','A4','Q3'])]
 #print(df_audi_top.head())
+print(df_audi.describe())
 
 # Visualise the Data
 sns.set_style('white')
@@ -103,7 +104,7 @@ plt.show()
 #### - Basic Model - Multiple Linear Regression - Audi Sample Data Set
 # Check Correlation
 df_audi = df[df["make"]=='audi']
-print(df_audi.corr()
+print(df_audi.corr())
 
 
 # create X and y
