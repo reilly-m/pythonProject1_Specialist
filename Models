@@ -249,8 +249,3 @@ best_rfr= rfr_random.best_estimator_
 random_accuracy = evaluate(best_rfr,x_train,y_train)
 
 print('Improvement of {:0.2f}%.'.format( 100 * (random_accuracy - base_accuracy) / base_accuracy))
-
-
-
-print("break")
-stop
